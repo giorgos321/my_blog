@@ -6,6 +6,7 @@ const passport = require('passport');
 const dotenv = require('dotenv');
 const session = require('express-session');
 const cors = require('cors');
+const path = require('path');
 
 //Configure enviroment variables
 dotenv.config({ path: './config/config.env' });
@@ -35,9 +36,14 @@ app.use('/api/posts', require('./routes/api/posts'));
 app.use('/api/register', require('./routes/api/register'));
 app.use('/api/auth', require('./routes/api/auth'));
 
-app.get('/', (req, res) => {
-  res.send('Api running');
-});
+//Serve Static assets in production
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+}
 
 const PORT = process.env.PORT || 7000;
 
