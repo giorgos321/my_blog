@@ -64,7 +64,7 @@ export const createPost = (postData, history) => async (dispatch) => {
 
 export const deletePost = (postID) => async (dispatch) => {
   try {
-    const res = await axios.delete(`/api/posts/${postID}`);
+    await axios.delete(`/api/posts/${postID}`);
 
     dispatch({
       type: DELETE_POST,

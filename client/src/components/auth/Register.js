@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { register } from '../../actions/auth';
 import { setAlert } from '../../actions/alert';
@@ -44,7 +44,6 @@ const Register = ({ isAuthenticated, register, setAlert }) => {
               <input
                 type='text'
                 name='name'
-                placeholder='name'
                 className='form-control mr-md-1 semail'
                 value={name}
                 onChange={(e) => onChange(e)}
@@ -64,7 +63,6 @@ const Register = ({ isAuthenticated, register, setAlert }) => {
                 type='text'
                 id='email'
                 name='email'
-                placeholder=''
                 className='form-control mr-md-1 semail'
                 value={email}
                 onChange={(e) => onChange(e)}
@@ -82,7 +80,6 @@ const Register = ({ isAuthenticated, register, setAlert }) => {
                 type='password'
                 id='password'
                 name='password'
-                placeholder=''
                 className='form-control mr-md-1 semail'
                 value={password}
                 onChange={(e) => onChange(e)}
@@ -102,7 +99,6 @@ const Register = ({ isAuthenticated, register, setAlert }) => {
                 type='password'
                 id='password_confirm'
                 name='password2'
-                placeholder=''
                 className='form-control mr-md-1 semail'
                 value={password2}
                 onChange={(e) => onChange(e)}

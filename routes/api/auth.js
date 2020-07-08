@@ -5,6 +5,7 @@ const { check, validationResult } = require('express-validator');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const secret = process.env.jwtsecret;
+const passport = require('passport');
 const User = require('../../models/Usermodel');
 
 // @route       GET api/auth
@@ -70,6 +71,21 @@ router.post(
       console.error(err.message);
       res.status(500).send('Server Error');
     }
+  }
+);
+
+//@desc Auth with Google
+//@route GET /auth/google
+router.get('/google', passport.authenticate('google', { scope: ['profile'] }));
+
+//@desc Google Auth Callback
+//@route GET /auth/google/callback
+
+router.get(
+  '/google/callback',
+  passport.authenticate('google', { failureRedirect: '/' }),
+  (req, res) => {
+    res.redirect('/dashboard');
   }
 );
 

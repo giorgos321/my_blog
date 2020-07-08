@@ -1,7 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
 import CKEditor from 'ckeditor4-react';
-import ReactHtmlParser from 'react-html-parser';
 import { createPost } from '../actions/posts';
 import { connect } from 'react-redux';
 

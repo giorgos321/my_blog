@@ -18,17 +18,17 @@ const Bloglist = ({
     <Fragment>
       <section className='cta-section theme-bg-light py-5'>
         <div className='container text-center'>
-          <h2 className='heading'>DevBlog - A Developers Blog</h2>
+          <h2 className='heading'>Καλωσόρισεατε στο Blog μου</h2>
 
           {user !== null ? (
             <div className='intro'>
-              Hello {user.name} and welcome to my blog. Subscribe and get my
-              latest blog post in your inbox.
+              Γεία σου {user.name}. Αν θες μπορείς να κάνεις Subscribe για να
+              βλέπεις τα τελεύταια Post.
             </div>
           ) : (
             <div className='intro'>
-              Welcome to my blog. Subscribe and get my latest blog post in your
-              inbox.
+              Γεία σας αν θέλετε να μαθαίνετε κάθε φορά που ανεβαίνει κάποιο
+              Post μπορείτε να κάνετε Subscribe
             </div>
           )}
 
@@ -57,20 +57,6 @@ const Bloglist = ({
             <BlogItem key={post._id} post={post}></BlogItem>
           ))}
           {loading && <Spinner />}
-          <nav className='blog-nav nav nav-justified my-5'>
-            <a
-              className='nav-link-prev nav-item nav-link d-none rounded-left'
-              href='#'
-            >
-              Previous<i className='arrow-prev fas fa-long-arrow-alt-left'></i>
-            </a>
-            <a
-              className='nav-link-next nav-item nav-link rounded'
-              href='blog-list.html'
-            >
-              Next<i className='arrow-next fas fa-long-arrow-alt-right'></i>
-            </a>
-          </nav>
         </div>
       </section>
     </Fragment>

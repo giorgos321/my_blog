@@ -3,104 +3,218 @@ import React, { Fragment } from 'react';
 const Aboutme = () => {
   return (
     <Fragment>
-      <article className='about-section py-5'>
-        <div className='container'>
-          <h2 className='title mb-3'>About Me</h2>
-
-          <p>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-            commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-            penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-            Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
-            Nulla consequat massa quis enim. Donec pede justo, fringilla vel,
-            aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
-            imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede
-            mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum
-            semper nisi. Aenean vulputate eleifend tellus.{' '}
-          </p>
-          <figure>
-            <img
-              className='img-fluid'
-              src='assets/images/about-me.jpg'
-              alt='image'
-            />
-          </figure>
-          <h5 className='mt-5'>About The Blog</h5>
-          <p>
-            Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.
-            Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.
-            Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
-            Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.
-            Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur
-            ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas
-            tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit
-            amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel,
-            luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante
-            tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus.
-            Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt.
-            Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis
-            magna. Sed consequat, leo eget bibendum sodales, augue velit cursus
-            nunc, quis gravida magna mi a libero. Fusce vulputate eleifend
-            sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy
-            id, metus.
-          </p>
-          <h5 className='mt-5'>My Skills and Experiences</h5>
-          <p>
-            Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.
-            Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.
-            Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
-            Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.
-            Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur
-            ullamcorper ultricies nisi.
-          </p>
-          <h5 className='mt-5'>Side Projects</h5>
-          <p>
-            Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.
-            Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.
-            Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
-            Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.
-            Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur
-            ullamcorper ultricies nisi.
-          </p>
-
-          <figure>
-            <a href='https://made4dev.com'>
-              <img
-                className='img-fluid'
-                src='assets/images/promo-banner.jpg'
-                alt='image'
-              />
-            </a>
-          </figure>
-        </div>
-      </article>
-
-      <section className='cta-section theme-bg-light py-5'>
-        <div className='container text-center'>
-          <h2 className='heading'>Newsletter</h2>
-          <div className='intro'>
-            Welcome to my blog. Subscribe and get my latest blog post in your
-            inbox.
-          </div>
-          <form className='signup-form form-inline justify-content-center pt-3'>
-            <div className='form-group'>
-              <label className='sr-only' for='semail'>
-                Your email
-              </label>
-              <input
-                type='email'
-                id='semail'
-                name='semail1'
-                className='form-control mr-md-1 semail'
-                placeholder='Enter email'
-              />
+      <div className='section main-wrap'>
+        <div className='sidebar'>
+          <h1>Skills</h1>
+          <div className='skill'>
+            <h3 style={{ margin: '10px 5px' }}>
+              React <i class='fab fa-react'></i>
+            </h3>
+            <div className='progress' style={{ height: '40px' }}>
+              <div
+                className='progress-bar'
+                style={{ width: '70%', height: '40px' }}
+              >
+                70%
+              </div>
             </div>
-            <button type='submit' className='btn btn-primary'>
-              Subscribe
-            </button>
-          </form>
+          </div>
+          <div className='skill'>
+            <h3 style={{ margin: '10px 5px' }}>
+              Vue <i class='fab fa-vuejs'></i>
+            </h3>
+            <div className='progress' style={{ height: '40px' }}>
+              <div
+                className='progress-bar'
+                style={{ width: '20%', height: '40px' }}
+              >
+                20%
+              </div>
+            </div>
+          </div>
+          <div className='skill'>
+            <h3 style={{ margin: '10px 5px' }}>
+              HTML <i class='fab fa-html5'></i>
+            </h3>
+            <div className='progress' style={{ height: '40px' }}>
+              <div
+                className='progress-bar'
+                style={{ width: '100%', height: '40px' }}
+              >
+                100%
+              </div>
+            </div>
+          </div>
+          <div className='skill'>
+            <h3 style={{ margin: '10px 5px' }}>
+              CSS <i class='fab fa-css3-alt'></i>
+            </h3>
+            <div className='progress' style={{ height: '40px' }}>
+              <div
+                className='progress-bar'
+                style={{ width: '60%', height: '40px' }}
+              >
+                60%
+              </div>
+            </div>
+          </div>
+          <div className='skill'>
+            <h3 style={{ margin: '10px 5px' }}>
+              JavaScript <i class='fab fa-js'></i>
+            </h3>
+            <div className='progress' style={{ height: '40px' }}>
+              <div
+                className='progress-bar'
+                style={{ width: '80%', height: '40px' }}
+              >
+                80%
+              </div>
+            </div>
+          </div>
+          <div className='skill'>
+            <h3 style={{ margin: '10px 5px' }}>
+              Python <i class='fab fa-python'></i>
+            </h3>
+            <div className='progress' style={{ height: '40px' }}>
+              <div
+                className='progress-bar'
+                style={{ width: '80%', height: '40px' }}
+              >
+                80%
+              </div>
+            </div>
+          </div>
+          <div className='skill'>
+            <h3 style={{ margin: '10px 5px' }}>
+              Node <i class='fab fa-node'></i>
+            </h3>
+            <div className='progress' style={{ height: '40px' }}>
+              <div
+                className='progress-bar'
+                style={{ width: '80%', height: '40px' }}
+              >
+                80%
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
+        <div className='main-desc'>
+          <div className='description'>
+            <h1>Προφίλ</h1>
+            <div className=' sort-desc'>
+              <p style={{ fontSize: '20px' }}>
+                Είμαι ένας ενθουσιώδης Junior Full-Stack developer ο οποίος έχει
+                τεράστια όρεξη για εργασία πάνω στον τομέα του προγραμματισμού
+                και πιο συγκεκριμένα στο Web Development. Δίνω έμφαση στην
+                λεπτομέρια και προσέχω πάντα ο κώδικάς μου να είναι ευανάγνωστος
+                καθώς έχω πάντα ομαδίκο πνεύμα
+              </p>
+            </div>
+
+            <h1>Εκπαίδευση</h1>
+            <div className=' sort-desc' style={{ fontSize: '20px' }}>
+              <h5>Απολύτηριο Λύκειου , 2ο Γ.Ε.Λ. Ηγουμενίτσας</h5>
+              <span>Ιούλιος 2015</span>
+              <h5>
+                Software Engineer , Μηχανικών Πληροφορικής (Τ.Ε.Ι. Στερεάς
+                Ελλάδας)
+              </h5>
+              <span>Σεπτέμβριος 2015 - Ιούλιος 2020</span>
+            </div>
+            <h1>Projects</h1>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                flexWrap: 'wrap',
+              }}
+            >
+              <div
+                className='card'
+                style={{
+                  width: '18rem',
+                  marginRight: '10px',
+                  marginBottom: '20px',
+                }}
+              >
+                <img
+                  className='card-img-top'
+                  src='https://my-bio-8729a.web.app/Screenshot%20(16).png'
+                  alt='Card image cap'
+                />
+                <div className='card-body'>
+                  <h5 className='card-title'>DevBook</h5>
+                  <p className='card-text'>
+                    Ένα social platform για developers <br />
+                    Τεχνολογίες που χρησιμοποιήθηκαν : MongoDB , React(frontend)
+                    , Node/Express(Backend) , Redux , JWToken(Auth)
+                  </p>
+                  <a
+                    href='https://salty-river-39034.herokuapp.com/'
+                    className='btn btn-primary'
+                  >
+                    Go to site
+                  </a>
+                </div>
+              </div>
+              <div
+                className='card'
+                style={{
+                  width: '18rem',
+                  marginRight: '10px',
+                  marginBottom: '20px',
+                }}
+              >
+                <img
+                  className='card-img-top'
+                  src='https://my-bio-8729a.web.app/Screenshot%20(18).png'
+                  alt='Card image cap'
+                />
+                <div className='card-body'>
+                  <h5 className='card-title'>Tommy on the Go</h5>
+                  <p className='card-text'>
+                    Ένα μικρό platform game σε Python <br />
+                    Τεχνολογίες που χρησιμοποιήθηκαν : Python, Pygame(lib)
+                  </p>
+                  <a
+                    href='https://github.com/giorgos321/a_small_platform_game'
+                    className='btn btn-primary'
+                  >
+                    Go to site
+                  </a>
+                </div>
+              </div>
+              <div
+                className='card'
+                style={{
+                  width: '18rem',
+                  marginRight: '10px',
+                  marginBottom: '20px',
+                }}
+              >
+                <img
+                  className='card-img-top'
+                  src='https://my-bio-8729a.web.app/Screenshot%20(21).png'
+                  alt='Card image cap'
+                />
+                <div className='card-body'>
+                  <h5 className='card-title'>My Blog-Portfolio</h5>
+                  <p className='card-text'>
+                    Το προσωπικό μου blog-portfolio{' '}
+                    <span style={{ fontweight: 'bold' }}>
+                      (Work in progress)
+                    </span>
+                    <br />
+                    Τεχνολογίες που χρησιμοποιήθηκαν :
+                    React,Node/Express,Redux,PassportJs(Auth)
+                  </p>
+                </div>
+              </div>
+              *Ολα τα projects υπάρχουν στο Github
+            </div>
+          </div>
+        </div>
+      </div>
     </Fragment>
   );
 };

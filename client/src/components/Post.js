@@ -14,7 +14,7 @@ const Post = ({
 }) => {
   useEffect(() => {
     getPost(match.params.id);
-  }, [getPost]);
+  }, [getPost, match.params.id]);
   return (
     <Fragment>
       {loading ? (
@@ -29,9 +29,7 @@ const Post = ({
                   Published <Moment fromNow>{date}</Moment>
                 </span>
                 <span class='time'>5 min read</span>
-                <span class='comment'>
-                  <a href='#'>4 comments</a>
-                </span>
+                <span class='comment'></span>
               </div>
             </header>
           </div>
@@ -42,7 +40,7 @@ const Post = ({
 
               <figcaption class='mt-2 text-center image-caption'>
                 Image Credit:{' '}
-                <a href={image} target='_blank'>
+                <a href={image} target='_blank' rel='noopener noreferrer'>
                   {image}
                 </a>
               </figcaption>

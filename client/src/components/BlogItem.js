@@ -29,9 +29,7 @@ const BlogItem = ({
                 Published <Moment fromNow>{date}</Moment>
               </span>
               <span className='time'>5 min read</span>
-              <span className='comment'>
-                <a href='#'>8 comments</a>
-              </span>
+              <span className='comment'></span>
             </div>
             <div className='intro'>
               {ReactHtmlParser(text.substring(0, 200) + '...')}

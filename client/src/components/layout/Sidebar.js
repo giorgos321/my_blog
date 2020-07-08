@@ -3,12 +3,20 @@ import { NavLink, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logout } from '../../actions/auth';
+import { Glogin } from '../../actions/auth';
+import { Modal, Button } from 'react-bootstrap';
 
-const Sidebar = ({ auth: { isAuthenticated, loading, user }, logout }) => {
+const Sidebar = ({
+  auth: { isAuthenticated, loading, user },
+  Glogin,
+  logout,
+}) => {
+  const [modalShow, setModalShow] = React.useState(false);
+
   return (
     <header className='header text-center'>
       <h1 className='blog-name pt-lg-4 mb-0'>
-        <a href='index.html'>Anthony's Blog</a>
+        <Link to='/'>George's Blog</Link>
       </h1>
 
       <nav className='navbar navbar-expand-lg navbar-dark'>
@@ -28,39 +36,29 @@ const Sidebar = ({ auth: { isAuthenticated, loading, user }, logout }) => {
           <div className='profile-section pt-3 pt-lg-0'>
             <img
               className='profile-image mb-3 rounded-circle mx-auto'
-              src='https://scontent.fath3-3.fna.fbcdn.net/v/t1.0-9/11065918_10205869741477752_1014402601962101750_n.jpg?_nc_cat=105&_nc_sid=174925&_nc_eui2=AeE7eUMOVblwc887w_k8pWpf5x27K0B1yOLnHbsrQHXI4gbs6gOA3GjpoFWZCQ8SbY4&_nc_ohc=UWEjV9bSJvEAX90fdGT&_nc_ht=scontent.fath3-3.fna&oh=61f2ee18334e83c31dacf5cc1e986b6b&oe=5F08B586'
+              src='https://my-bio-8729a.web.app/0.jpg'
               alt='image'
             />
 
             <div className='bio mb-3'>
-              Hi, my name is Anthony Doe. Briefly introduce yourself here. You
-              can also provide a link to the about page.
-              <a href='about.html'>Find out more about me</a>
+              Είμαι ένας ενθουσιώδης Junior Full-Stack developer ο οποίος έχει
+              τεράστια όρεξη για εργασία πάνω στον τομέα του προγραμματισμού και
+              πιο συγκεκριμένα στο Web Development. Δίνω έμφαση στην λεπτομέρια
+              και προσέχω πάντα ο κώδικάς μου να είναι ευανάγνωστος καθώς έχω
+              πάντα ομαδίκο πνεύμα
+              <Link to='/about'>
+                <br></br>Μάθετε περισσότερα για εμένα
+              </Link>
             </div>
             <ul className='social-list list-inline py-3 mx-auto'>
               <li className='list-inline-item'>
-                <a href='#'>
-                  <i className='fab fa-twitter fa-fw'></i>
-                </a>
-              </li>
-              <li className='list-inline-item'>
-                <a href='#'>
+                <a href='https://www.linkedin.com/in/%CE%B3%CE%B9%CF%8E%CF%81%CE%B3%CE%BF%CF%82-%CE%BB%CE%AC%CE%BC%CE%B5-b48624129/'>
                   <i className='fab fa-linkedin-in fa-fw'></i>
                 </a>
               </li>
               <li className='list-inline-item'>
-                <a href='#'>
+                <a href='https://github.com/giorgos321'>
                   <i className='fab fa-github-alt fa-fw'></i>
-                </a>
-              </li>
-              <li className='list-inline-item'>
-                <a href='#'>
-                  <i className='fab fa-stack-overflow fa-fw'></i>
-                </a>
-              </li>
-              <li className='list-inline-item'>
-                <a href='#'>
-                  <i className='fab fa-codepen fa-fw'></i>
                 </a>
               </li>
             </ul>
@@ -91,6 +89,7 @@ const Sidebar = ({ auth: { isAuthenticated, loading, user }, logout }) => {
                 <i className='fas fa-user fa-fw mr-2'></i>About Me
               </NavLink>
             </li>
+
             {isAuthenticated && !loading && user !== null ? (
               <Fragment>
                 <li>
@@ -139,7 +138,16 @@ const Sidebar = ({ auth: { isAuthenticated, loading, user }, logout }) => {
             )}
           </ul>
 
-          <div className='my-2 my-md-3 btn btn-primary'>Get in Touch</div>
+          <div
+            className='my-2 my-md-3 btn btn-primary'
+            onClick={() => setModalShow(true)}
+          >
+            Επικοινωνία
+          </div>
+          <MyVerticallyCenteredModal
+            show={modalShow}
+            onHide={() => setModalShow(false)}
+          />
         </div>
       </nav>
     </header>
@@ -149,10 +157,43 @@ const Sidebar = ({ auth: { isAuthenticated, loading, user }, logout }) => {
 Sidebar.propTypes = {
   auth: PropTypes.object.isRequired,
   logout: PropTypes.func.isRequired,
+  Glogin: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   auth: state.auth,
 });
 
-export default connect(mapStateToProps, { logout })(Sidebar);
+function MyVerticallyCenteredModal(props) {
+  return (
+    <Modal
+      {...props}
+      size='lg'
+      aria-labelledby='contained-modal-title-vcenter'
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id='contained-modal-title-vcenter'>
+          Επικοινωνία
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <p style={{ marginTop: '10px', fontSize: '25px' }}>
+          Στείλτε μου ένα Email :D
+        </p>
+        <Button onClick={(e) => sendEmail(e)}>email</Button>
+        <p style={{ marginTop: '10px', fontSize: '25px' }}>
+          Κινητό : +30 6979073271
+        </p>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button onClick={props.onHide}>Close</Button>
+      </Modal.Footer>
+    </Modal>
+  );
+}
+const sendEmail = (e) => {
+  e.preventDefault();
+  window.open('mailto:test@example.com');
+};
+export default connect(mapStateToProps, { Glogin, logout })(Sidebar);

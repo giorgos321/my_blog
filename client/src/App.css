@@ -17,3 +17,66 @@
 .wrapper-padding {
   margin: 0px 7vw;
 }
+.sidebar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  margin: 20px 20px;
+  padding: 18px 35px;
+  background-color: #f7ebe8ff;
+  border-radius: 9px;
+}
+
+.main-desc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+}
+
+.description {
+  background-color: #f7ebe8ff;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 20px 20px;
+  padding: 18px 35px;
+}
+
+.profile-title {
+  background: #f7ebe8ff;
+  padding: 18px 35px;
+  margin: 20px 20px;
+  border-radius: 20px;
+}
+
+.skill {
+  margin-bottom: 50px;
+}
+
+.progress {
+  border: 2px solid #1b0092;
+}
+
+.main-wrap {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 70%;
+  grid-template-columns: 1fr 70%;
+  -ms-grid-columns: minmax(0, 1fr) 70%;
+  grid-template-columns: minmax(0, 1fr) 70%;
+  -webkit-column-gap: 30px;
+  column-gap: 30px;
+}
+
+.sort-desc {
+  margin: 20px 0px 70px 0px;
+}

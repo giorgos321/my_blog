@@ -9,7 +9,6 @@ import {
   AUTH_ERROR,
   LOGIN_FAIL,
   LOG_OUT,
-  DELETE_ACCOUNT,
 } from './types';
 import setAuthToken from '../utils/setAuthToken';
 
@@ -91,4 +90,25 @@ export const logout = () => async (dispatch) => {
   dispatch({
     type: LOG_OUT,
   });
+};
+export const Glogin = () => async (dispatch) => {
+  try {
+    const res = await axios.get('http://localhost:7000/api/auth/google');
+    console.log(res.data);
+    dispatch({
+      type: LOGIN_USER,
+      payload: res.data,
+    });
+    dispatch(loadUser());
+  } catch (err) {
+    console.error(err);
+    const errors = err.response.data.errors;
+    if (errors) {
+      errors.forEach((error) => dispatch(setAlert(error.msg, 'danger')));
+    }
+
+    dispatch({
+      type: LOGIN_FAIL,
+    });
+  }
 };
