@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const connectDB = require('./config/db');
-const morgan = require('morgan');
 const passport = require('passport');
 const dotenv = require('dotenv');
 const session = require('express-session');
@@ -16,7 +15,6 @@ require('./config/passport')(passport);
 
 app.use(express.json({ extended: false }));
 app.use(cors());
-app.use(morgan('dev'));
 connectDB();
 
 // Sessions
